@@ -1,0 +1,16 @@
+body {
+  background-color: #ad2123;
+  color: #fda329;
+}
+
+h1 {
+  font-family: Myanmar MN;
+  color: white;
+  position: relative;
+  font-size: 60px
+}
+
+p {
+  font-family: Silom;
+  font-size: 60px;
+}
