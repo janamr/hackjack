@@ -1,6 +1,8 @@
 body {
   background-color: #ad2123;
   color: #fda329;
+  /* background-image: url(HACKJACK) */
+
 }
 
 h1 {
@@ -10,7 +12,93 @@ h1 {
   font-size: 60px
 }
 
-p {
+.dollars {
   font-family: Silom;
   font-size: 60px;
+  margin: auto;
+}
+
+.chip {
+ height: 57px;
+ width: 57px;
+}
+
+.footer {
+  background-color: #0f3a53;
+  height: 80px;
+}
+
+.before {
+
+}
+
+.button{
+  display: inline;
+}
+#hit {
+  height: 130.5px;
+  width: 130.5px;
+  background-image: url("../images/hand-point.png");
+  background-color: #fda329;
+  border-radius: 24px;
+  display: inline-block;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  display: none;
+}
+
+#stand {
+  height: 130.5px;
+  width: 130.5px;
+  background-color: #fda329;
+  border-radius: 24px;
+  display: inline-block;
+  display: none
+}
+
+#deal {
+  height: 130.5px;
+  width: 130.5px;
+  background-color: #fda329;
+  border-radius: 24px;
+  display: inline-block;
+}
+
+.gray-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+#gray-box-left {
+  height: 64px;
+  width: 324px;
+  background-color: #757575;
+  border-radius: 12px;
+  border: 1px solid black;
+}
+
+#gray-box-middle {
+  height: 64px;
+  width: 160px;
+  background-color: #757575;
+  border-radius: 12px;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.score {
+  font-family: Silom;
+  font-size: 60px;
+  margin: auto;
+  float: left;
+  background-color: #757575;
+  height: 64px;
+  width: 160px;
+  border: 1px solid black;
+  border-radius: 12px;
+}
+
+.player-cards {
+  height: 214px;
+  display: none;
 }

@@ -6,7 +6,7 @@ function card (value,name,suit){
 
 var cards = [];
 function deck (){
-  this.names = ['ace','two','three','four','five','six','seven','eight','nine','ten','jack','queen','king'];
+  this.names = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
   this.suits = ['hearts','diamonds','spades','clubs'];
 
   for (var s = 0; s < this.suits.length; s++) {
@@ -17,5 +17,7 @@ function deck (){
       cards.push(new card(n+1, this.names[n], this.suits[s]));
     }
   }
+
+
   return cards;
 }
