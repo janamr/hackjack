@@ -14,52 +14,69 @@
 </head>
 <body>
 
-  <div class="beforeDeal">
-      <img src="images/hackjack-pre-deal.png" alt="" class="pre-deal" width="561px">
-      <img src="images/hackjack-post-deal.png" alt="" class="post-deal" width="560px">
+  <div class="content">
 
+      <div class="upper-elements">
+        <section class="dealer-cards">
+          <img src="images/card-placeholder.png" class="player-cards" alt="">
+          <img src="images/card-placeholder.png" class="player-cards" alt="">
+          </section>
+        </div>
+
+        <div class="title">
+            <img src="images/hackjack-pre-deal.png" alt="" class="pre-deal" width="561px">
+            <img src="images/hackjack-post-deal.png" alt="" class="post-deal" width="560px">
+
+        </div>
+
+          <div class="lower-elements">
+            <div class="lower-left">
+                <div id="bet-coin">
+                  <p>5</p>
+                </div>
+            </div>
+
+            <div class="lower-middle">
+                <div class="player-cards">
+                    <img src="images/card-placeholder.png" class="player-cards" alt="">
+                    <img src="images/card-placeholder.png" class="player-cards" alt="">
+                </div>
+            </div>
+
+
+            <div class="lower-right">
+                  <button id="hit"> </button>
+                  <button id="stand"> </button>
+                  <button id="deal">deal</button>
+            </div>
+
+      </div>
   </div>
 
-  <div class="buttons">
-        <button id="hit"> </button>
-        <button id="stand">Stand</button>
-        <button id="deal">Deal</button>
-  </div>
-
-  <div class="cards">
-    <section class="dealer-cards">
-      <img src="images/card-placeholder.png" class="player-cards" alt="">
-      <img src="images/card-placeholder.png" class="player-cards" alt="">
-      </section>
-    <section class="player-cards">
-        <img src="images/card-placeholder.png" class="player-cards" alt="">
-        <img src="images/card-placeholder.png" class="player-cards" alt="">
-    </section>
-  </div>
 
   <div class="footer">
-    <ul class="chips">
-        <img src="images/CHIP-ORANGE.png" class="chip" alt="">
-        <img src="images/chip-red.png" class="chip" alt="">
-        <img src="images/chip-bluish.png" class="chip" alt="">
-        <img src="images/chip-greenish.png" class="chip" alt="">
-    </ul>
-
-    <div class="gray-box">
-      <div id="gray-box-left"> </div>
-      <div id="gray-box-middle"> </div>
-      <div class="score"> 0 </div>
-
+    <div class="lower-left">
+      <div id="gray-box-left">
+        <ul class="chips">
+          <img src="images/CHIP-ORANGE.png" class="chip" alt="">
+          <img src="images/chip-red.png" class="chip" alt="">
+          <img src="images/chip-bluish.png" class="chip" alt="">
+          <img src="images/chip-greenish.png" class="chip" alt="">
+        </ul>
+      </div>
+      </div>
+      <div class="lower-middle">
+          <div id="gray-box-middle"><div class="dollars">$<span>95</span></div></div>
+      </div>
+      <div class="lower-right">
+          <div class="score"> 0 </div>
+      </div>
     </div>
-    <div class="dollars">$<span>95</span></div>
-
-
-
   </div>
 
 
+  <div class="floating-div"> </div>
 
-<img src="" alt="">
 <script src="cards.js"></script>
 <script src="game.js"></script>
 

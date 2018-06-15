@@ -47,8 +47,11 @@ function deal() {
   displayHand();
   $(".dealer-cards").empty();
   var card = dealer.cards[0]
-  $('.dealer-cards').append('<div>'+ card.name +'<img src="images/'+ card.suit +'.png"></div>');
-  $('.dealer-cards').append('<img src="images/card-placeholder.png" class="player-cards" alt="">');
+  $('.dealer-cards').append('<div class="card-holder"><span>'+ card.name +'<img src="images/'+ card.suit +'.png" class="suit-image"></span></div>');
+  $('.dealer-cards').append('<div class="card-holder"><span></span></div>');
+  if (player.points === 21) {
+    message("HACKJACK!");
+  }
 
 }
 
@@ -56,7 +59,7 @@ function displayHand() {
   $(".score").text(player.points);
   $(".player-cards").empty();
   player.cards.forEach(function(card){
-    $('.player-cards').append('<div>'+ card.name +'<img src="images/'+ card.suit +'.png"></div>');
+    $('.player-cards').append('<div class="card-holder"><span>'+ card.name +'<img src="images/'+ card.suit +'.png" class="suit-image"></span></div>');
   });
 }
 
@@ -105,14 +108,14 @@ function sumValues (user) {
   for (var i=0; i<user.cards.length; i++) {
     user.points += user.cards[i].value
   }
-  // if (user.points > 21) {
-  //   var ace = user.cards.find(function(element) {
-  //     return element.name == "A"
-  //   })
-  // }
-  // if (ace !== undefined){
-  //   return user.points - 10
-  // }
+  if (user.points > 21) {
+    var ace = user.cards.find(function(element) {
+      return element.name == "A"
+    })
+    if (ace !== undefined){
+      user.points -= 10
+    }
+  }
 
 
  return user.points
@@ -134,15 +137,21 @@ function sumValues (user) {
 // function compare player&dealer cards
 function compare(){
   if (player.points == dealer.points) {
-    alert ('STANDOFF');
+    message("STANDOFF!");
   }
-  if (player.points > dealer.points && player.points <= 21){
-    alert ('YOU WON!')
+  if ((player.points > dealer.points || dealer.points > 21) && player.points <= 21 ){
+    message("YOU WIN!");
   }
   else if (dealer.points > player.points && dealer.points <= 21) {
-    alert ('YOU LOSE!');
+    message("YOU LOSE!");
   }
 };
+
+
+function message(messageText) {
+  $(".floating-div").text(messageText);
+  $(".floating-div").fadeIn();
+}
 
 // $(document).ready(function(){
 //   $(".deal").click(function(){
@@ -157,20 +166,26 @@ $("#deal").click(function (){
     $(".player-cards").show();
     $("#hit").show();
     $("#stand").show();
-    $(".pre-deal").hide();
+    $(".pre-deal").fadeOut();
     $("#deal").hide();
 })
 
 $("#hit").click(function(){
   draw(player);
   displayHand();
+  if (player.points > 21) {
+    message("YOU LOSE!");
+  }
+  else if (player.points === 21) {
+    message("HACKJACK!");
+  }
 })
 
 $("#stand").click(function(){
   dealerChoice();
   $(".dealer-cards").empty();
   dealer.cards.forEach(function(card){
-    $('.dealer-cards').append('<div>'+ card.name +'<img src="images/'+ card.suit +'.png"></div>');
+    $('.dealer-cards').append('<div class="card-holder"><span>'+ card.name +'<img src="images/'+ card.suit +'.png" class="suit-image"></span></div>');
   });
   compare();
 })

@@ -12,29 +12,46 @@ h1 {
   font-size: 60px
 }
 
+.upper-elements {
+  min-height: 214px;
+}
+.title {
+  text-align: center;
+}
+
+.content {
+ height: 80vh;
+ padding-top: 10px;
+}
+
 .dollars {
   font-family: Silom;
-  font-size: 60px;
+  font-size: 50px;
   margin: auto;
+  text-align: center;
+}
+
+.chips {
+  display: flex;
+  margin: 0;
 }
 
 .chip {
- height: 57px;
- width: 57px;
+  padding-top: 2px;
+  height: 54px;
+  width: 54px;
+  margin: 2.5px;
 }
 
 .footer {
   background-color: #0f3a53;
-  height: 80px;
-}
-
-.before {
-
+  height: 150px;
 }
 
 .button{
   display: inline;
 }
+
 #hit {
   height: 130.5px;
   width: 130.5px;
@@ -42,18 +59,25 @@ h1 {
   background-color: #fda329;
   border-radius: 24px;
   display: inline-block;
-  background-size: 60%;
+  background-size: 85%;
   background-repeat: no-repeat;
+  background-position: center;
   display: none;
+  margin-right: 2px;
 }
 
 #stand {
   height: 130.5px;
   width: 130.5px;
   background-color: #fda329;
+  background-image: url("../images/HAND-WAVE.png");
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 24px;
   display: inline-block;
-  display: none
+  display: none;
+  margin-left: 1px;
 }
 
 #deal {
@@ -62,43 +86,141 @@ h1 {
   background-color: #fda329;
   border-radius: 24px;
   display: inline-block;
+  font-family: Myanmar MN;
+  font-size: 40px;
+  color: antiquewhite;
 }
 
-.gray-box {
+.pre-deal {
+  position: absolute;
+}
+
+.lower-left {
   display: flex;
   justify-content: space-between;
 }
 
 #gray-box-left {
   height: 64px;
-  width: 324px;
+  width: 314px;
   background-color: #757575;
   border-radius: 12px;
   border: 1px solid black;
+  margin-top: 12px;
 }
 
 #gray-box-middle {
-  height: 64px;
+  height: 60px;
   width: 160px;
   background-color: #757575;
   border-radius: 12px;
   border: 1px solid black;
-  margin: auto;
+  margin-top: 12px;
 }
 
 .score {
   font-family: Silom;
-  font-size: 60px;
-  margin: auto;
-  float: left;
+  font-size: 50px;
   background-color: #757575;
-  height: 64px;
+  height: 60px;
   width: 160px;
   border: 1px solid black;
   border-radius: 12px;
+  text-align: center;
+  margin-top: 12px;
 }
 
 .player-cards {
   height: 214px;
+  display: flex;
   display: none;
+  justify-content: center;
+}
+
+.dealer-cards {
+  display: flex;
+  justify-content: center;
+}
+
+.lower-elements {
+  display: flex;
+  justify-content: space-between;
+}
+
+.suit-image {
+  height: 53px;
+  width: auto;
+}
+
+#bet-coin {
+  font-family: 'Times New Roman', Times, serif;
+  background-image: url(../images/CHIP-ORANGE.png);
+  height: 146px;
+  width: 146px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 40px;
+  color: antiquewhite;
+  text-align: center;
+}
+ #bet-coin > p {
+   padding: 8px;
+ }
+
+.card-holder {
+  background-image: url("../images/card-placeholder.png");
+  height: 214px;
+  width: 153px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+}
+
+.card-holder > span {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  font-family: 'Times New Roman', Times, sans-serif;
+  color: antiquewhite;
+  font-size: 69px;
+  width:128px;
+}
+
+.floating-div {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: none;
+  top: 50%;
+  left: 50%;
+  font-size: 150px;
+  font-family: Myanmar MN;
+  text-align: center;
+  background-size: 100%;
+  background-color: #ffffffb0;
+  color: #ad2123;
+}
+
+.lower-middle {
+  width: 34%;
+  display: flex;
+  justify-content: center;
+}
+
+.lower-left {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+}
+
+.lower-right {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  display: flex;
 }
