@@ -85,10 +85,10 @@ var dealer = new Dealer([], 0)
 // console.log(dealer)
 
 //player object
-function Player (cards, chips, bet, points) {
+function Player (cards, chips, totalBet, points) {
   this.cards = cards;
   this.chips = chips;
-  this.bet = bet;
+  this.totalBet = totalBet;
   this.points = points;
 }
 
@@ -102,6 +102,12 @@ Player.prototype.hit = function(Draw){
 Player.prototype.stand = function(){
   return this.cards
 }
+
+Player.prototype.bet5 = function(){
+  this.chips -= 5
+  this.totalBet += 5
+}
+
 
 function sumValues (user) {
   user.points = 0;
@@ -138,20 +144,38 @@ function sumValues (user) {
 function compare(){
   if (player.points == dealer.points) {
     message("STANDOFF!");
+    player.chips += player.totalBet;
   }
   if ((player.points > dealer.points || dealer.points > 21) && player.points <= 21 ){
     message("YOU WIN!");
+    player.chips += player.totalBet*2;
   }
   else if (dealer.points > player.points && dealer.points <= 21) {
     message("YOU LOSE!");
   }
 };
 
+// function updateCoins() {
+//   if (blackjack) {
+//     player.chips += player.totalBet*2.5;
+//   }
+//   if (win) {
+//     player.chips += player.totalBet*2;
+//   }
+//   if (standoff) {
+//     player.chips += player.totalBet;
+//   }
+//   player.chips -= 5;
+//   player.totalBet = 5;
+// }
+
 
 function message(messageText) {
   $(".floating-div").text(messageText);
   $(".floating-div").fadeIn();
 }
+
+
 
 // $(document).ready(function(){
 //   $(".deal").click(function(){
@@ -189,6 +213,22 @@ $("#stand").click(function(){
   });
   compare();
 })
+
+
+
+
+  $("#bet-coin").click(function changeBet(){
+
+    player.chips -= 5
+    player.totalBet += 5
+
+      $(".dollars").text("$"+player.chips);
+      $("p").text(player.totalBet);
+    })
+
+
+
+
 
 // $(".hit").click(function draw())
 // $(".stand").click(function compare())

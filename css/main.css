@@ -204,19 +204,19 @@ h1 {
 }
 
 .lower-middle {
-  width: 34%;
+  width: 40%;
   display: flex;
   justify-content: center;
 }
 
 .lower-left {
-  width: 33%;
+  width: 30%;
   display: flex;
   justify-content: center;
 }
 
 .lower-right {
-  width: 33%;
+  width: 30%;
   display: flex;
   justify-content: center;
 }
